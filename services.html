@@ -1,0 +1,87 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Let's Talk Insight — Services</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <header class="site-header">
+    <div class="nav-inner">
+      <a class="logo" href="index.html">Let's Talk Insight</a>
+      <nav class="nav-links">
+        <a href="index.html" class="nav-link">Home</a>
+        <a href="about.html" class="nav-link">About</a>
+        <a href="services.html" class="nav-link active">Services</a>
+        <a href="blog.html" class="nav-link">Blog</a>
+        <a href="appointment.html" class="nav-link">Appointment</a>
+        <a href="contact.html" class="nav-link">Contact</a>
+      </nav>
+      <button class="hamburger" id="hamburgerServices" aria-label="Open menu">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </header>
+  <div class="mobile-nav" id="mobileNavServices">
+    <a href="index.html">Home</a>
+    <a href="about.html">About</a>
+    <a href="services.html">Services</a>
+    <a href="blog.html">Blog</a>
+    <a href="appointment.html">Appointment</a>
+    <a href="contact.html">Contact</a>
+  </div>
+
+  <main>
+    <section class="section-gradient">
+      <h1 class="section-title">Our Services</h1>
+      <p class="section-sub">Each service includes a brief description — click to learn more or book.</p>
+
+      <div class="services-grid">
+        <!-- repeatable card -->
+        <article class="service-card large">
+          <div class="service-icon">🧠</div>
+          <h3>Individual Therapy</h3>
+          <p>One-on-one therapy focusing on anxiety, depression, stress management, self-esteem, and coping strategies.</p>
+        </article>
+
+        <article class="service-card large">
+          <div class="service-icon">❤️</div>
+          <h3>Couples Therapy</h3>
+          <p>Support for relationship challenges, communication improvement, and conflict resolution.</p>
+        </article>
+
+        <article class="service-card large">
+          <div class="service-icon">💻</div>
+          <h3>Online Sessions</h3>
+          <p>Secure video sessions for remote clients with flexible scheduling.</p>
+        </article>
+
+        <article class="service-card large">
+          <div class="service-icon">👥</div>
+          <h3>Group Workshops</h3>
+          <p>Interactive groups on stress reduction, mindfulness, and parenting skills.</p>
+        </article>
+      </div>
+    </section>
+  </main>
+
+  <a class="contact-bubble" href="contact.html" title="Contact">
+    <svg width="26" height="26" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+      <path d="M12 3C7.03 3 3 7.03 3 12v5a2 2 0 0 0 2 2h1a1 1 0 0 0 1-1v-5a1 1 0 0 0-1-1H6v-1a6 6 0 0 1 12 0v1h-1a1 1 0 0 0-1 1v5a1 1 0 0 0 1 1h1a2 2 0 0 0 2-2v-5c0-4.97-4.03-9-9-9z" fill="white"/>
+    </svg>
+  </a>
+
+  <footer class="site-footer">
+    <div class="socials">
+      <a href="#" class="social">in</a>
+      <a href="#" class="social">t</a>
+      <a href="#" class="social">ig</a>
+    </div>
+    <div class="copyright">© <span id="yearServices"></span> Let's Talk Insight — All rights reserved</div>
+  </footer>
+
+  <script src="blogs-data.js"></script>
+  <script src="script.js"></script>
+</body>
+</html>

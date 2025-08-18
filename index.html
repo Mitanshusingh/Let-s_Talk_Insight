@@ -1,0 +1,127 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Let's Talk Insight — Home</title>
+  <link rel="stylesheet" href="style.css" />
+  <meta name="description" content="Let's Talk Insight — professional psychologist services" />
+</head>
+<body>
+  <!-- NAV -->
+  <header class="site-header" id="header">
+    <div class="nav-inner">
+      <a class="logo" href="index.html">Let's Talk Insight</a>
+      <nav class="nav-links" id="navLinks">
+        <a href="index.html" class="nav-link active">Home</a>
+        <a href="about.html" class="nav-link">About</a>
+        <a href="services.html" class="nav-link">Services</a>
+        <a href="blog.html" class="nav-link">Blog</a>
+        <a href="appointment.html" class="nav-link">Appointment</a>
+        <a href="contact.html" class="nav-link">Contact</a>
+      </nav>
+      <button class="hamburger" id="hamburger" aria-label="Open menu">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </header>
+
+  <!-- MOBILE NAV (overlay - hidden by default; script toggles it) -->
+  <div class="mobile-nav" id="mobileNav" aria-hidden="true">
+    <a href="index.html">Home</a>
+    <a href="about.html">About</a>
+    <a href="services.html">Services</a>
+    <a href="blog.html">Blog</a>
+    <a href="appointment.html">Appointment</a>
+    <a href="contact.html">Contact</a>
+  </div>
+
+  <!-- HERO (full-bleed background image + centered overlay) -->
+  <main>
+    <section class="hero" style="background-image:url('https://images.unsplash.com/photo-1524504388940-b1c1722653e1?q=80&w=1600&auto=format&fit=crop');">
+      <div class="hero-overlay">
+        <h1>Find Clarity, Healing & Growth</h1>
+        <p class="tagline">Your journey towards better mental health starts here.</p>
+        <div class="hero-cta">
+          <a class="btn" href="appointment.html">Book Appointment</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- SERVICES PREVIEW -->
+    <section class="section-gradient" id="services-preview">
+      <h2 class="section-title">Services</h2>
+      <p class="section-sub">Therapeutic support tailored to your needs</p>
+      <div class="services-grid small">
+        <article class="service-card">
+          <div class="service-icon">🧠</div>
+          <h3>Individual Therapy</h3>
+          <p>Personalized sessions for anxiety, depression, stress, and life transitions.</p>
+        </article>
+        <article class="service-card">
+          <div class="service-icon">❤️</div>
+          <h3>Couples Therapy</h3>
+          <p>Improve communication, rebuild trust, and strengthen connection.</p>
+        </article>
+        <article class="service-card">
+          <div class="service-icon">💻</div>
+          <h3>Online Sessions</h3>
+          <p>Secure and convenient therapy via video for remote clients.</p>
+        </article>
+        <article class="service-card">
+          <div class="service-icon">👥</div>
+          <h3>Workshops</h3>
+          <p>Group workshops on stress management, mindfulness, and resilience.</p>
+        </article>
+      </div>
+      <div class="center">
+        <a class="btn" href="services.html">View All Services</a>
+      </div>
+    </section>
+
+    <!-- REVIEWS -->
+    <section class="section-gradient" id="reviews">
+      <h2 class="section-title">Patient Reviews</h2>
+      <p class="section-sub">Real words — anonymized to respect privacy</p>
+      <div class="reviews-grid">
+        <div class="review-card">“Warm, insightful, and helped me cope with anxiety. Highly recommend.”</div>
+        <div class="review-card">“Professional and compassionate. I felt heard and supported.”</div>
+        <div class="review-card">“Flexible online sessions made it easy to maintain therapy.”</div>
+        <div class="review-card">“Great tools and practical homework — visible progress.”</div>
+      </div>
+    </section>
+
+    <!-- BLOG PREVIEW -->
+    <section class="section-gradient" id="blog-preview">
+      <h2 class="section-title">From the Blog</h2>
+      <p class="section-sub">Practical articles and mental health tips</p>
+      <div id="blogCards" class="blog-grid">
+        <!-- Blog cards injected by JS -->
+      </div>
+      <div class="center">
+        <a class="btn" href="blog.html">Read More Articles</a>
+      </div>
+    </section>
+  </main>
+
+  <!-- CONTACT FLOAT -->
+  <a class="contact-bubble" href="contact.html" title="Contact">
+    <svg width="26" height="26" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+      <path d="M12 3C7.03 3 3 7.03 3 12v5a2 2 0 0 0 2 2h1a1 1 0 0 0 1-1v-5a1 1 0 0 0-1-1H6v-1a6 6 0 0 1 12 0v1h-1a1 1 0 0 0-1 1v5a1 1 0 0 0 1 1h1a2 2 0 0 0 2-2v-5c0-4.97-4.03-9-9-9z" fill="white"/>
+    </svg>
+  </a>
+
+  <!-- FOOTER -->
+  <footer class="site-footer">
+    <div class="socials">
+      <a href="#" aria-label="LinkedIn" class="social">in</a>
+      <a href="#" aria-label="Twitter" class="social">t</a>
+      <a href="#" aria-label="Instagram" class="social">ig</a>
+    </div>
+    <div class="copyright">© <span id="year"></span> Let's Talk Insight — All rights reserved</div>
+  </footer>
+
+  <script src="blogs-data.js"></script>
+  <script src="script.js"></script>
+</body>
+</html>

@@ -1,0 +1,62 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Let's Talk Insight — Blog</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <header class="site-header">
+    <div class="nav-inner">
+      <a class="logo" href="index.html">Let's Talk Insight</a>
+      <nav class="nav-links">
+        <a href="index.html" class="nav-link">Home</a>
+        <a href="about.html" class="nav-link">About</a>
+        <a href="services.html" class="nav-link">Services</a>
+        <a href="blog.html" class="nav-link active">Blog</a>
+        <a href="appointment.html" class="nav-link">Appointment</a>
+        <a href="contact.html" class="nav-link">Contact</a>
+      </nav>
+      <button class="hamburger" id="hamburgerBlog" aria-label="Open menu">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </header>
+  <div class="mobile-nav" id="mobileNavBlog">
+    <a href="index.html">Home</a>
+    <a href="about.html">About</a>
+    <a href="services.html">Services</a>
+    <a href="blog.html">Blog</a>
+    <a href="appointment.html">Appointment</a>
+    <a href="contact.html">Contact</a>
+  </div>
+
+  <main class="section-gradient">
+    <h1 class="section-title">Blog</h1>
+    <p class="section-sub">Helpful articles about mental health and wellbeing</p>
+
+    <div id="blogList" class="blog-grid">
+      <!-- blog cards injected by JS -->
+    </div>
+  </main>
+
+  <a class="contact-bubble" href="contact.html" title="Contact">
+    <svg width="26" height="26" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+      <path d="M12 3C7.03 3 3 7.03 3 12v5a2 2 0 0 0 2 2h1a1 1 0 0 0 1-1v-5a1 1 0 0 0-1-1H6v-1a6 6 0 0 1 12 0v1h-1a1 1 0 0 0-1 1v5a1 1 0 0 0 1 1h1a2 2 0 0 0 2-2v-5c0-4.97-4.03-9-9-9z" fill="white"/>
+    </svg>
+  </a>
+
+  <footer class="site-footer">
+    <div class="socials">
+      <a href="#" class="social">in</a>
+      <a href="#" class="social">t</a>
+      <a href="#" class="social">ig</a>
+    </div>
+    <div class="copyright">© <span id="yearBlog"></span> Let's Talk Insight — All rights reserved</div>
+  </footer>
+
+  <script src="blogs-data.js"></script>
+  <script src="script.js"></script>
+</body>
+</html>

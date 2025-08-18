@@ -1,0 +1,137 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Let's Talk Insight — Appointment</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <header class="site-header">
+    <div class="nav-inner">
+      <a class="logo" href="index.html">Let's Talk Insight</a>
+      <nav class="nav-links">
+        <a href="index.html" class="nav-link">Home</a>
+        <a href="about.html" class="nav-link">About</a>
+        <a href="services.html" class="nav-link">Services</a>
+        <a href="blog.html" class="nav-link">Blog</a>
+        <a href="appointment.html" class="nav-link active">Appointment</a>
+        <a href="contact.html" class="nav-link">Contact</a>
+      </nav>
+      <button class="hamburger" id="hamburgerAppt" aria-label="Open menu">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </header>
+  <div class="mobile-nav" id="mobileNavAppt">
+    <a href="index.html">Home</a>
+    <a href="about.html">About</a>
+    <a href="services.html">Services</a>
+    <a href="blog.html">Blog</a>
+    <a href="appointment.html">Appointment</a>
+    <a href="contact.html">Contact</a>
+  </div>
+
+  <main class="section-gradient">
+    <h1 class="section-title">Book an Appointment</h1>
+    <p class="section-sub">Choose a date and time that suits you — we’ll confirm shortly.</p>
+
+    <form id="appointmentForm" class="form-grid" novalidate>
+      <label>
+        <span class="label-text">Full Name</span>
+        <div class="input-inline">
+          <svg class="input-icon" viewBox="0 0 24 24"><path fill="white" d="M12 12c2.7 0 4.8-2.1 4.8-4.8S14.7 2.4 12 2.4 7.2 4.5 7.2 7.2 9.3 12 12 12zm0 2.4c-3.3 0-9.6 1.7-9.6 5.1V22h19.2v-2.5c0-3.4-6.3-5.1-9.6-5.1z"/></svg>
+          <input type="text" id="name" name="name" placeholder="Your full name" required />
+        </div>
+        <small class="error" data-for="name"></small>
+      </label>
+
+      <label>
+        <span class="label-text">Email</span>
+        <div class="input-inline">
+          <svg class="input-icon" viewBox="0 0 24 24"><path fill="white" d="M20 4H4c-1.1 0-2 .9-2 2v12c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z"/></svg>
+          <input type="email" id="email" name="email" placeholder="your@email.com" required />
+        </div>
+        <small class="error" data-for="email"></small>
+      </label>
+
+      <label>
+        <span class="label-text">Phone</span>
+        <div class="input-inline">
+          <svg class="input-icon" viewBox="0 0 24 24"><path fill="white" d="M6.6 10.8c1.7 3.1 4.2 5.6 7.3 7.3l2.1-2.1c.3-.3.8-.4 1.1-.2 1.2.5 2.5.8 3.9.8.6 0 1 .4 1 1V20c0 .6-.4 1-1 1C10 21 3 14 3 6c0-.6.4-1 1-1h2.5c.6 0 1 .4 1 1 0 1.4.3 2.7.8 3.9.2.3.1.8-.2 1.1L6.6 10.8z"/></svg>
+          <input type="tel" id="phone" name="phone" placeholder="+91 99999 99999" required />
+        </div>
+        <small class="error" data-for="phone"></small>
+      </label>
+
+      <label>
+        <span class="label-text">Service</span>
+        <div class="input-inline">
+          <select id="service" name="service" required>
+            <option value="">Select a service</option>
+            <option>Individual Therapy</option>
+            <option>Couples Therapy</option>
+            <option>Online Session</option>
+            <option>Workshop/Group</option>
+          </select>
+        </div>
+        <small class="error" data-for="service"></small>
+      </label>
+
+      <label>
+        <span class="label-text">Date</span>
+        <div class="input-inline">
+          <input type="date" id="date" name="date" required />
+        </div>
+        <small class="error" data-for="date"></small>
+      </label>
+
+      <label>
+        <span class="label-text">Time</span>
+        <div class="input-inline">
+          <input type="time" id="time" name="time" required />
+        </div>
+        <small class="error" data-for="time"></small>
+      </label>
+
+      <label class="full">
+        <span class="label-text">Message (optional)</span>
+        <div class="input-inline">
+          <textarea id="message" name="message" placeholder="Brief reason for appointment (optional)"></textarea>
+        </div>
+      </label>
+
+      <div class="full center">
+        <button type="submit" class="btn">Request Appointment</button>
+      </div>
+    </form>
+  </main>
+
+  <!-- SUCCESS MODAL -->
+  <div id="successModal" class="modal">
+    <div class="modal-content">
+      <h3>Appointment Requested</h3>
+      <p>Thank you — your request has been received. We will contact you to confirm the appointment.</p>
+      <button class="btn" id="closeModal">Close</button>
+    </div>
+  </div>
+
+  <a class="contact-bubble" href="contact.html" title="Contact">
+    <svg width="26" height="26" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+      <path d="M12 3C7.03 3 3 7.03 3 12v5a2 2 0 0 0 2 2h1a1 1 0 0 0 1-1v-5a1 1 0 0 0-1-1H6v-1a6 6 0 0 1 12 0v1h-1a1 1 0 0 0-1 1v5a1 1 0 0 0 1 1h1a2 2 0 0 0 2-2v-5c0-4.97-4.03-9-9-9z" fill="white"/>
+    </svg>
+  </a>
+
+  <footer class="site-footer">
+    <div class="socials">
+      <a href="#" class="social">in</a>
+      <a href="#" class="social">t</a>
+      <a href="#" class="social">ig</a>
+    </div>
+    <div class="copyright">© <span id="yearAppt"></span> Let's Talk Insight — All rights reserved</div>
+  </footer>
+
+  <script src="blogs-data.js"></script>
+  <script src="script.js"></script>
+</body>
+</html>
