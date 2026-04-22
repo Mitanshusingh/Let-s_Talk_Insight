@@ -1,0 +1,271 @@
+/* 1. ADD THIS AT THE VERY TOP OF style.css */
+*, *::before, *::after {
+  box-sizing: border-box;
+}
+
+:root {
+  --g1: #e23232ef; /* deep red */
+  --g2: #f79234fa; /* light orange */
+  --text: #ffffff;
+  --card-alpha: rgba(255,255,255,0.08);
+  --glass: rgba(255,255,255,0.06);
+  --radius: 14px;
+  --max-width: 1100px;
+  --shadow: 0 6px 18px rgba(0,0,0,0.22);
+  --shadow-hover: 0 12px 24px rgba(0,0,0,0.35);
+  font-family: "Inter", system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+}
+
+/* Global background */
+html, body {
+  height: 100%;
+  margin: 0;
+  background: linear-gradient(135deg, var(--g1), var(--g2));
+  background-attachment: fixed; /* Keeps gradient stable on scroll */
+  color: var(--text);
+  -webkit-font-smoothing: antialiased;
+  scroll-behavior: smooth;
+}
+
+.mobile-nav { display: none; }
+
+/* Header nav */
+.site-header {
+  position: sticky; top: 0; z-index: 60; backdrop-filter: blur(10px); -webkit-backdrop-filter: blur(10px);
+  background: linear-gradient(90deg, rgba(255,255,255,0.06), rgba(255,255,255,0.02));
+  border-bottom: 1px solid rgba(255,255,255,0.1);
+  box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+}
+.nav-inner {
+  max-width: var(--max-width); margin: 0 auto; padding: 12px 18px; display: flex; align-items: center; justify-content: space-between;
+}
+.logo { font-weight: 800; color: var(--text); text-decoration: none; font-size: 1.15rem; letter-spacing: 0.5px; }
+.nav-links { display: flex; gap: 18px; align-items: center; }
+.nav-links a { color: var(--text); text-decoration: none; padding: 8px 4px; position: relative; opacity: 0.85; font-weight: 500; transition: opacity 0.3s ease; }
+.nav-links a:hover { opacity: 1; }
+.nav-links a.active::after, .nav-links a:hover::after {
+  content: ""; position: absolute; left: 0; right: 0; bottom: -4px; height: 3px; border-radius: 4px;
+  background: linear-gradient(90deg, var(--g2), var(--g1));
+  box-shadow: 0 2px 4px rgba(0,0,0,0.2);
+}
+
+.header-cta { margin-left: 15px; } /* Added for header button */
+
+/* Hamburger */
+.hamburger { display: none; background: transparent; border: 0; width: 44px; height: 44px; align-items: center; justify-content: center; cursor: pointer; }
+.hamburger span { display: block; height: 2px; background: white; margin: 5px 0; border-radius: 3px; width: 22px; transition: transform 0.3s ease, opacity 0.3s ease; }
+
+/* HERO */
+.hero {
+  background-size: cover; background-position: center; padding: 100px 18px; display: flex; align-items: center; justify-content: center;
+}
+.hero-overlay {
+  max-width: 800px; width: 100%; text-align: center;
+  background: rgba(0,0,0,0.3); backdrop-filter: blur(8px); -webkit-backdrop-filter: blur(8px);
+  padding: 40px; border-radius: 20px; border: 1px solid rgba(255,255,255,0.1);
+  box-shadow: var(--shadow);
+}
+.hero-overlay h1 { font-size: 2.8rem; margin: 0 0 10px 0; font-weight: 800; line-height: 1.2; }
+.hero-overlay .tagline { margin: 0 0 24px; opacity: 0.9; font-weight: 400; font-size: 1.1rem; }
+.hero-cta { display: flex; gap: 15px; justify-content: center; }
+
+/* SECTIONS */
+.section-gradient {
+  padding: 40px 24px; margin: 30px auto; max-width: var(--max-width); border-radius: 20px;
+  background: linear-gradient(180deg, rgba(255,255,255,0.06), rgba(255,255,255,0.01));
+  backdrop-filter: blur(10px); -webkit-backdrop-filter: blur(10px);
+  border: 1px solid rgba(255,255,255,0.08); box-shadow: var(--shadow);
+}
+.section-title { margin: 0 0 8px 0; font-size: 2rem; text-align: center; font-weight: 700; }
+.section-sub { margin: 0 0 30px 0; opacity: 0.85; text-align: center; font-size: 1.05rem; }
+
+/* SERVICES SLIDER (Logic copied from Reviews Slider) */
+.services-slider {
+  display: flex;
+  gap: 20px;
+  overflow-x: auto;
+  scroll-snap-type: x mandatory;
+  padding: 10px 0 30px;
+  scrollbar-width: none; /* Firefox */
+  -ms-overflow-style: none; /* IE/Edge */
+}
+
+.services-slider::-webkit-scrollbar {
+  display: none; /* Safari and Chrome */
+}
+
+/* Adjust Service Card for Slider Mode */
+.services-slider .service-card {
+  flex: 0 0 85%; /* Card width on mobile */
+  max-width: 300px; /* Card width on desktop */
+  scroll-snap-align: center;
+  /* Override default margin/height if necessary */
+  margin: 0; 
+}
+
+/* Ensure the service icon stays centered in the new layout */
+.service-icon {
+  margin: 0 auto 10px;
+}
+
+/* SERVICES GRID */
+.services-grid { display: grid; gap: 20px; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); align-items: stretch; }
+/* 2. FIND AND REPLACE your existing .service-card rule with this one: */
+.service-card {
+  padding: 24px; 
+  border-radius: var(--radius); 
+  min-height: 200px; 
+  display: flex; 
+  flex-direction: column; 
+  gap: 12px;
+  background: linear-gradient(135deg, rgba(255,255,255,0.08), rgba(255,255,255,0.02));
+  border: 1px solid rgba(255,255,255,0.1); 
+  transition: transform 0.3s ease, box-shadow 0.3s ease, border-color 0.3s ease;
+  /* Removed 'height: 100%' to prevent overlapping bugs */
+}
+.service-card:hover {
+  transform: translateY(-5px); box-shadow: var(--shadow-hover); border-color: rgba(255,255,255,0.25);
+}
+.service-icon {
+  width: 60px; height: 60px; display: flex; align-items: center; justify-content: center; border-radius: 14px;
+  background: linear-gradient(135deg, var(--g1), var(--g2)); font-size: 26px; color: white; margin: 0 auto 10px;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+}
+.service-card p { opacity: 0.85; line-height: 1.5; font-size: 0.95rem; margin-bottom: 15px; flex-grow: 1; }
+
+/* REVIEWS */
+/* REVIEWS SLIDER */
+.reviews-slider { 
+  display: flex; 
+  gap: 20px; 
+  overflow-x: auto; 
+  scroll-snap-type: x mandatory; 
+  padding: 10px 0 30px; /* Padding bottom allows hover shadows to show */
+  
+  /* Hide scrollbar for a clean, modern look */
+  scrollbar-width: none; /* Firefox */
+  -ms-overflow-style: none; /* IE/Edge */
+}
+
+.reviews-slider::-webkit-scrollbar { 
+  display: none; /* Safari and Chrome */
+}
+
+.review-card {
+  flex: 0 0 85%; /* Cards take up 85% width on mobile so the next card peeks in */
+  max-width: 320px; /* Caps width on desktop */
+  scroll-snap-align: center; /* Snaps the card to the center of the view */
+  padding: 30px 24px; 
+  border-radius: 16px; 
+  background: linear-gradient(135deg, rgba(255,255,255,0.1), rgba(255,255,255,0.03));
+  border: 1px solid rgba(255,255,255,0.1); 
+  box-shadow: var(--shadow); 
+  color: white; 
+  display: flex; 
+  flex-direction: column;
+  align-items: center; 
+  justify-content: center; 
+  text-align: center; 
+  font-style: italic; 
+  line-height: 1.6;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.review-card:hover {
+  transform: translateY(-5px);
+  box-shadow: var(--shadow-hover);
+}
+
+.review-card p {
+  margin: 0;
+  flex-grow: 1;
+  display: flex;
+  align-items: center;
+}
+
+.review-card .stars {
+  margin-top: 18px;
+  font-style: normal;
+  font-size: 0.9rem;
+  letter-spacing: 2px;
+  opacity: 0.9;
+}
+
+
+/* FOOTER */
+.site-footer { padding: 30px 18px; text-align: center; margin-top: 40px; background: rgba(0,0,0,0.15); border-top: 1px solid rgba(255,255,255,0.05); }
+.socials { margin-bottom: 12px; }
+.social { 
+  display: inline-flex;           /* Changed from inline-block to inline-flex */
+  align-items: center;            /* Centers the SVG vertically */
+  justify-content: center;        /* Centers the SVG horizontally */
+  width: 42px; 
+  height: 42px; 
+  border-radius: 50%; 
+  margin: 0 8px; 
+  background: linear-gradient(135deg, var(--g1), var(--g2)); 
+  color: white; 
+  text-decoration: none; 
+  transition: transform 0.2s ease, box-shadow 0.2s ease; 
+  box-shadow: 0 4px 10px rgba(0,0,0,0.2); 
+}
+.social:hover { transform: translateY(-3px) scale(1.05); box-shadow: 0 6px 14px rgba(0,0,0,0.3); }
+.copyright { font-size: 13px; opacity: 0.7; }
+
+/* CONTACT BUBBLE */
+.contact-bubble {
+  position: fixed; right: 24px; bottom: 24px; z-index: 80; width: 60px; height: 60px; display: flex; align-items: center; justify-content: center; border-radius: 50%;
+  background: linear-gradient(135deg, var(--g1), var(--g2)); box-shadow: 0 4px 15px rgba(0,0,0,0.3); text-decoration: none; border: 2px solid rgba(255,255,255,0.2); transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+.contact-bubble:hover { transform: scale(1.1) rotate(5deg); box-shadow: 0 8px 20px rgba(0,0,0,0.4); }
+
+/* FORM & INPUTS (Professional Focus States) */
+.form-grid { display: grid; gap: 20px; grid-template-columns: repeat(2, 1fr); }
+.form-grid label { display: block; color: var(--text); }
+.input-inline { display: flex; align-items: center; gap: 12px; padding: 12px 14px; border-radius: 12px; background: rgba(0,0,0,0.15); border: 1px solid rgba(255,255,255,0.15); transition: all 0.3s ease; }
+.input-inline:focus-within { border-color: rgba(255,255,255,0.6); background: rgba(0,0,0,0.25); box-shadow: 0 0 0 3px rgba(255,255,255,0.1); }
+.input-inline input, .input-inline select, .input-inline textarea { background: transparent; border: 0; outline: none; color: var(--text); width: 100%; font-size: 1rem; font-family: inherit; }
+.input-inline input::placeholder, .input-inline textarea::placeholder { color: rgba(255,255,255,0.5); }
+.input-inline select option { background: #333; color: white; }
+.input-icon { width: 20px; height: 20px; opacity: 0.7; transition: opacity 0.3s ease; }
+.input-inline:focus-within .input-icon { opacity: 1; }
+.full { grid-column: 1 / -1; }
+.center { text-align: center; }
+.label-text { display: block; margin-bottom: 8px; font-weight: 600; font-size: 0.95rem; }
+.error { color: #ffbaba; font-size: 13px; height: 14px; display: block; margin-top: 6px; font-weight: 500; }
+textarea { min-height: 100px; resize: vertical; }
+
+/* MODAL */
+.modal { position: fixed; inset: 0; display: none; align-items: center; justify-content: center; background: rgba(0,0,0,0.6); backdrop-filter: blur(5px); z-index: 200; }
+.modal-content { background: linear-gradient(135deg, rgba(255,255,255,0.1), rgba(255,255,255,0.05)); backdrop-filter: blur(15px); padding: 30px; border-radius: 16px; width: 90%; max-width: 420px; text-align: center; border: 1px solid rgba(255,255,255,0.15); box-shadow: 0 10px 30px rgba(0,0,0,0.5); }
+.modal-content h3 { margin-top: 0; font-size: 1.5rem; }
+
+/* BUTTONS */
+.btn {
+  display: inline-block; padding: 12px 24px; border-radius: 12px; text-decoration: none; color: white; font-size: 1rem;
+  background: linear-gradient(135deg, var(--g1), var(--g2)); font-weight: 700; border: 1px solid rgba(255,255,255,0.2);
+  transition: all 0.3s ease; box-shadow: 0 4px 10px rgba(0,0,0,0.15); cursor: pointer; text-align: center;
+}
+.btn:hover { transform: translateY(-2px); box-shadow: 0 6px 15px rgba(0,0,0,0.25); filter: brightness(1.1); }
+.btn:active { transform: translateY(0); box-shadow: 0 2px 5px rgba(0,0,0,0.15); }
+.btn.ghost {
+  background: rgba(255,255,255,0.05); border: 1px solid rgba(255,255,255,0.2); box-shadow: none;
+}
+.btn.ghost:hover { background: rgba(255,255,255,0.15); border-color: rgba(255,255,255,0.4); }
+
+/* RESPONSIVE */
+@media (max-width: 900px) {
+  .hero { padding: 60px 18px; }
+  .hero-overlay h1 { font-size: 2rem; }
+  .form-grid { grid-template-columns: 1fr; }
+  .nav-links, .header-cta { display: none; }
+  .hamburger { display: flex; flex-direction: column; align-items: center; justify-content: center; }
+  
+  .mobile-nav {
+    display: none; position: fixed; top: 70px; left: 0; right: 0; z-index: 50; padding: 20px 0; text-align: center;
+    background: rgba(0,0,0,0.85); backdrop-filter: blur(15px); -webkit-backdrop-filter: blur(15px);
+    border-bottom: 1px solid rgba(255,255,255,0.1); box-shadow: 0 10px 20px rgba(0,0,0,0.3);
+  }
+  .mobile-nav a { display: block; padding: 16px; color: var(--text); font-weight: 600; text-decoration: none; border-bottom: 1px solid rgba(255,255,255,0.05); font-size: 1.1rem; }
+  .mobile-nav a:last-child { border-bottom: none; }
+  .mobile-nav a:hover { background: rgba(255,255,255,0.05); }

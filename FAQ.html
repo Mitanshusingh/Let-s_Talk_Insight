@@ -1,0 +1,245 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Let's Talk Insight — FAQ</title>
+  <link rel="stylesheet" href="style.css" />
+  <style>
+    /* FAQ Page Professional Overrides */
+    .faq-container {
+      max-width: 900px;
+      margin: 60px auto;
+      padding: 0 20px;
+    }
+
+    .faq-header {
+      text-align: center;
+      margin-bottom: 50px;
+    }
+
+    .faq-header h1 {
+      font-size: 3rem;
+      font-weight: 800;
+      margin-bottom: 15px;
+      background: linear-gradient(to bottom, #ffffff, #ffd6d6);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+
+    /* Professional Glass Accordion */
+    .faq-item {
+      background: rgba(255, 255, 255, 0.07);
+      backdrop-filter: blur(12px);
+      -webkit-backdrop-filter: blur(12px);
+      border: 1px solid rgba(255, 255, 255, 0.12);
+      border-radius: 18px;
+      margin-bottom: 20px;
+      transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+      overflow: hidden;
+    }
+
+    .faq-question {
+      width: 100%;
+      padding: 24px 30px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      cursor: pointer;
+      background: none;
+      border: none;
+      color: white;
+      font-size: 1.2rem;
+      font-weight: 600;
+      text-align: left;
+    }
+
+    .faq-icon-wrapper {
+      width: 32px;
+      height: 32px;
+      background: rgba(255, 255, 255, 0.1);
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      transition: transform 0.4s ease, background 0.3s ease;
+    }
+
+    .faq-item:hover {
+      background: rgba(255, 255, 255, 0.12);
+      transform: scale(1.01);
+      border-color: rgba(255, 255, 255, 0.3);
+    }
+
+    .faq-answer {
+      max-height: 0;
+      overflow: hidden;
+      transition: max-height 0.5s cubic-bezier(0, 1, 0, 1);
+      background: rgba(0, 0, 0, 0.15);
+    }
+
+    .faq-answer-inner {
+      padding: 0 30px 30px;
+      line-height: 1.8;
+      font-size: 1.05rem;
+      opacity: 0.9;
+      color: #f0f0f0;
+    }
+
+    /* Active State */
+    .faq-item.active {
+      background: rgba(255, 255, 255, 0.15);
+      border-color: rgba(255, 255, 255, 0.4);
+      box-shadow: 0 10px 30px rgba(0,0,0,0.15);
+    }
+
+    .faq-item.active .faq-answer {
+      max-height: 500px;
+      transition: max-height 0.5s cubic-bezier(1, 0, 1, 0);
+    }
+
+    .faq-item.active .faq-icon-wrapper {
+      background: #ffffff;
+      color: #e23232;
+      transform: rotate(180deg);
+    }
+
+    /* Bottom Contact CTA */
+    .faq-footer {
+      text-align: center;
+      margin-top: 60px;
+      padding: 40px;
+      background: var(--glass);
+      border-radius: 20px;
+    }
+  </style>
+</head>
+<body>
+  <header class="site-header">
+    <div class="nav-inner">
+      <a class="logo" href="index.html">Let's Talk Insight</a>
+      <nav class="nav-links">
+        <a href="index.html" class="nav-link">Home</a>
+        <a href="about.html" class="nav-link">About</a>
+        <a href="services.html" class="nav-link">Services</a>
+        <a href="FAQ.html" class="nav-link active">FAQ</a>
+        <a href="contact.html" class="nav-link">Contact</a>
+      </nav>
+      <div class="header-cta">
+         <a href="appointment.html" class="btn">Book Now</a>
+      </div>
+    </div>
+  </header>
+
+  <main class="faq-container">
+    <div class="faq-header">
+      <h1>Frequently Asked Questions</h1>
+      <p style="opacity: 0.8; font-size: 1.1rem;">Everything you need to know about our process and care.</p>
+    </div>
+
+    <div class="faq-item">
+      <button class="faq-question">
+        <span>What can I expect in my first therapy session?</span>
+        <div class="faq-icon-wrapper">
+          <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"></polyline></svg>
+        </div>
+      </button>
+      <div class="faq-answer">
+        <div class="faq-answer-inner">
+          In the first session, we focus on getting to know you. We'll discuss your concerns, your history, and what you hope to achieve through therapy. It's a safe space to see if we're a good fit for your journey.
+        </div>
+      </div>
+    </div>
+
+    <div class="faq-item">
+      <button class="faq-question">
+        <span>How long does each session last?</span>
+        <div class="faq-icon-wrapper">
+          <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"></polyline></svg>
+        </div>
+      </button>
+      <div class="faq-answer">
+        <div class="faq-answer-inner">
+          A standard individual therapy session typically lasts 45 to 50 minutes. Couples or family sessions may be scheduled for 60 to 75 minutes depending on your specific needs.
+        </div>
+      </div>
+    </div>
+
+    <div class="faq-item">
+      <button class="faq-question">
+        <span>Are the sessions confidential?</span>
+        <div class="faq-icon-wrapper">
+          <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"></polyline></svg>
+        </div>
+      </button>
+      <div class="faq-answer">
+        <div class="faq-answer-inner">
+          Yes, absolutely. Confidentiality is the cornerstone of therapy. Everything discussed in our sessions is private and protected by law, with very few legal exceptions regarding safety.
+        </div>
+      </div>
+    </div>
+
+    <div class="faq-item">
+      <button class="faq-question">
+        <span>Do you offer online or in-person sessions?</span>
+        <div class="faq-icon-wrapper">
+          <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"></polyline></svg>
+        </div>
+      </button>
+      <div class="faq-answer">
+        <div class="faq-answer-inner">
+          We provide both! You can choose between secure video consultations from the comfort of your home or traditional in-person sessions at our office.
+        </div>
+      </div>
+    </div>
+
+    <div class="faq-footer">
+      <h3>Still have questions?</h3>
+      <p>We're here to help you find the peace you deserve.</p>
+      <a href="contact.html" class="btn" style="display: inline-block; margin-top: 15px;">Contact Support</a>
+    </div>
+  </main>
+  <a class="contact-bubble" href="contact.html" title="Contact">
+    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor" viewBox="0 0 24 24"><path d="M20 4H4c-1.1 0-1.99.9-1.99 2L2 18c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z"/></svg>
+  </a>
+  <footer class="site-footer">
+     <div class="socials">
+      <a href="#" aria-label="LinkedIn" class="social">
+        <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" fill="currentColor" viewBox="0 0 24 24">
+          <path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"/>
+        </svg>
+      </a>
+      <a href="#" aria-label="Twitter" class="social">
+        <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" fill="currentColor" viewBox="0 0 24 24">
+          <path d="M18.901 1.153h3.68l-8.04 9.19L24 22.846h-7.406l-5.8-7.584-6.638 7.584H.474l8.6-9.83L0 1.154h7.594l5.243 6.932ZM17.61 20.644h2.039L6.486 3.24H4.298Z"/>
+        </svg>
+      </a>
+      <a href="#" aria-label="Instagram" class="social">
+        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor" viewBox="0 0 24 24">
+          <path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/>
+        </svg>
+      </a>
+    </div>
+    <div class="copyright">© 2026 Let's Talk Insight — All rights reserved</div>
+  </footer>
+
+  <script>
+    document.querySelectorAll('.faq-question').forEach(button => {
+      button.addEventListener('click', () => {
+        const faqItem = button.parentElement;
+        
+        // Close others for a clean look
+        document.querySelectorAll('.faq-item').forEach(item => {
+          if (item !== faqItem) item.classList.remove('active');
+        });
+
+        faqItem.classList.toggle('active');
+      });
+    });
+  </script>
+</body>
+</html>
+
+
+
+
